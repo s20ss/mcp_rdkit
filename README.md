@@ -74,3 +74,7 @@ To use the RDKit server with MCP, add the following configuration to your `mcp` 
   ]
 }
 ```
+
+
+
+[![smithery badge](https://smithery.ai/badge/@s20ss/mcp_rdkit)](https://smithery.ai/server/@s20ss/mcp_rdkit)
