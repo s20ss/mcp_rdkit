@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='mcp_rdkit',
-    version='0.1.6',
+    version='0.1.7',
     author='Shashank Shekhar Shukla',
     author_email='shukla20shashankshekhar@gmail.com',
     description='A package for RDKit integration with MCP',
@@ -20,6 +20,14 @@ setup(
     install_requires=[
         "rdkit",
         "mcp"
+    ],
+    keywords=[
+        "RDKit",
+        "MCP",
+        "cheminformatics",
+        "molecular visualization",
+        "descriptor calculation",
+        "Claude"
     ],
     project_urls={
         "Documentation": "https://github.com/s20ss/mcp_rdkit#readme",
