@@ -45,7 +45,7 @@ def img_byte_to_base64(img_byte):
     return img_str
 
 @mcp.tool()
-def smiles_to_image(smiles:str) :
+def smiles_to_image(smiles:str)->types.ImageContent:
     """Generate image from SMILES string"""
     m = Chem.MolFromSmiles(smiles)
     img = Draw.MolToImage(m)
@@ -56,17 +56,21 @@ def smiles_to_image(smiles:str) :
                 )
             
 @mcp.tool()
-def get_molecule_descriptors_from_smiles(smiles:str):
+def get_molecule_descriptors_from_smiles(smiles:str)->types.TextContent:
+    """Get molecular descriptors from SMILES string"""
     
     m = Chem.MolFromSmiles(smiles)
     descriptors = [Descriptors.CalcMolDescriptors(m)]
     df = pandas.DataFrame(descriptors)
     print(df.head())
     table_as_string = df.to_string(index=False)
-    return table_as_string
+    return types.TextContent(
+            type="text",
+                    text=table_as_string
+                )
 
 @mcp.tool()
-def visualize_chemical_reaction(smart_str:str):
+def visualize_chemical_reaction(smart_str:str)-> types.ImageContent:
     """Generate image for chemical reaction from SMARTS string"""
     
     rxn = AllChem.ReactionFromSmarts(smart_str,useSmiles=True)
@@ -80,7 +84,7 @@ def visualize_chemical_reaction(smart_str:str):
     
 
 @mcp.tool()
-def search_substructure(smiles:str, substructure_smiles:str,use_chirality:bool=False):
+def search_substructure(smiles:str, substructure_smiles:str,use_chirality:bool=False)->types.TextContent:
     """Search for substructure in a molecule"""
     m = Chem.MolFromSmiles(smiles)
     substructure = Chem.MolFromSmiles(substructure_smiles)
@@ -103,7 +107,7 @@ def search_substructure(smiles:str, substructure_smiles:str,use_chirality:bool=F
         )
 
 @mcp.tool()
-def get_smiles_from_name(chemical_name:str):
+def get_smiles_from_name(chemical_name:str)->types.TextContent:
     """Get SMILES string from name"""
     get_smile_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{chemical_name}/property/CanonicalSMILES/JSON"
     response = requests.get(get_smile_url)

@@ -5,6 +5,7 @@ FROM python:3.12-slim
 # Set the working directory in the container
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y libxrender1 && apt-get install -y libxrender1 && apt-get install -y   libxtst6 && apt-get install -y libxi6 && apt-get install -y libexpat-dev
 # Copy the current directory contents into the container at /app
 ADD . /app
 
