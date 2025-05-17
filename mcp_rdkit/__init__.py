@@ -5,4 +5,4 @@ __version__ = "0.1.0"
 
 
 """Main entry point for the package."""
-mcp.run("sse")
+mcp.run("streamable-http")
