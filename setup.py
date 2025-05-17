@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='mcp_rdkit',
-    version='0.1.7',
+    version='0.1.8',
     author='Shashank Shekhar Shukla',
     author_email='shukla20shashankshekhar@gmail.com',
     description='A package for RDKit integration with MCP',
