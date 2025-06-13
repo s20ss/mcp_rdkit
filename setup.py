@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='mcp_rdkit',
-    version='0.1.8',
+    version='0.1.9',
     author='Shashank Shekhar Shukla',
     author_email='shukla20shashankshekhar@gmail.com',
     description='A package for RDKit integration with MCP',
@@ -16,7 +16,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
-    python_requires='>=3.12',
+    python_requires='>=3.10',
     install_requires=[
         "rdkit",
         "mcp",

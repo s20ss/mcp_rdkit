@@ -45,9 +45,9 @@ The `mcp_rdkit` project integrates the RDKit library with the MCP (Model Context
 
 You can integrate this directly into Claude App:
 
-![Demo 1](uploads/image.png)
-![Demo 2](uploads/image%20(1).png)
-![Demo 3](uploads/image%20(2).png)
+![Demo 1](https://github.com/s20ss/mcp_rdkit/blob/main/uploads/image.png?raw=true)
+![Demo 2](https://github.com/s20ss/mcp_rdkit/blob/main/uploads/image%20(1).png?raw=true)
+![Demo 3](https://github.com/s20ss/mcp_rdkit/blob/main/uploads/image%20(2).png?raw=true)
 
 ## Usage
 
@@ -77,4 +77,4 @@ To use the RDKit server with MCP, add the following configuration to your `mcp` 
 
 
 
-[![smithery badge](https://smithery.ai/badge/@s20ss/mcp_rdkit)](https://smithery.ai/server/@s20ss/mcp_rdkit)
+RDKIT MCP is certified and indexed by [MCP Review](https://mcpreview.com/mcp-servers/s20ss/mcp_rdkit)

@@ -9,6 +9,7 @@ import pandas
 import requests
 import io
 from rdkit.Chem import AllChem
+from rdkit.Chem import rdRascalMCES
 
 # instantiate an MCP server client
 mcp = FastMCP("rdkit-mcp-server")
@@ -118,3 +119,26 @@ def get_smiles_from_name(chemical_name:str)->types.TextContent:
                 text=f"SMILES: {canonical_smiles}",
             )
 
+
+@mcp.tool()
+def get_weight_from_smiles(smiles:str)->types.TextContent:
+    """Get molecular weight from SMILES string"""
+    m = Chem.MolFromSmiles(smiles)
+    weight = Descriptors.MolWt(m)
+    return types.TextContent(
+        type="text",
+                text=f"Molecular Weight: {weight}",
+            )
+
+@mcp.tool()
+def find_maximum_common_substructure(smiles1:str, smiles2:str)->types.TextContent:
+    """Find maximum common substructure between two SMILES strings using RascalMCES"""
+    m1 = Chem.MolFromSmiles(smiles1)
+    m2 = Chem.MolFromSmiles(smiles2)
+    mcs = rdRascalMCES.FindMCES(m1, m2)
+    
+    mcs_smiles = mcs.smartsString
+    return types.TextContent(
+        type="text",
+                text=f"Maximum Common Substructure: {mcs_smiles}",
+            )
