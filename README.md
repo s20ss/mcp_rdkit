@@ -80,4 +80,6 @@ To use the RDKit server with MCP, add the following configuration to your `mcp` 
 
 
 RDKIT MCP is certified and indexed by [MCP Review](https://mcpreview.com/mcp-servers/s20ss/mcp_rdkit)
+
+
 [![Verified on MseeP](https://mseep.ai/badge.svg)](https://mseep.ai/app/e504ca84-1db0-4bb5-be6d-1a20e0d96293)
