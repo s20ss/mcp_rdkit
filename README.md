@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/s20ss-mcp-rdkit-badge.png)](https://mseep.ai/app/s20ss-mcp-rdkit)
+
 # MCP RDKit Project
 
 ## Overview
